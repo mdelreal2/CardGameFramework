@@ -58,7 +58,7 @@ public class Table
 		ArrayList<Card> hand = null;
 		
 		//don't allow the setting of 'hand' with an invalid parameter index for 'numPlayers'
-		if (playerIndex < 0 || playerIndex > this.numPlayers)
+		if (playerIndex < 0 || playerIndex > this.numPlayers - 1)
 		{
 			System.out.println("Invalid player index");
 		}

@@ -44,6 +44,12 @@ public class TableTest
 			assertEquals(6, p2.size());
 			assertEquals(6, p3.size());
 			assertEquals(6, p4.size());
+
+			//now that hand testing has been finished, test to make sure that an invalid index for getPlayerHands() returns null and outputs to the console
+			p1 = table.getPlayerHands(4);
+			assertEquals(null, p1);
+			p1 = table.getPlayerHands(-2);
+			assertEquals(null, p1);
 			
 			//at this point 7 cards remain in the deck, so if another round of 5 cards were to be dealt, then an exception should be thrown
 			table.dealCards(5);
