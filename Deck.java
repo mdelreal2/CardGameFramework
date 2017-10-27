@@ -51,9 +51,9 @@ public class Deck
 		Random random = new Random();
 		random.nextInt();
 		
-		for (int i = 0; i < deck.size(); i++)
+		for (int i = 0; i < this.deckIndex; i++)
 		{
-			int change = i + random.nextInt(deck.size() - i);
+			int change = i + random.nextInt(this.deckIndex - i);
 			Collections.swap(deck, i, change);
 		}
 		
@@ -84,18 +84,16 @@ public class Deck
 		
 	}
 	
-	//Deal(num)
-		//throw an expection if not enough cards to deal hand
-	
-	
-		//return array of Cards
-	
-	
 	void printDeck()
 	{
 		for (int i = 0; i < deck.size(); i++)
 		{
 			deck.get(i).print();
 		}
+	}
+	
+	int getDeckIndex()
+	{
+		return this.deckIndex;
 	}
 }
