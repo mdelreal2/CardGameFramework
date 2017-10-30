@@ -21,6 +21,9 @@ public class TableTest
 			ArrayList<Card> p3 = table.getPlayerHands(2);
 			ArrayList<Card> p4 = table.getPlayerHands(3);
 			
+			//showing an example hand
+			table.printPlayersHand(0);
+			
 			//testing that all players have a hand size of 5 cards
 			assertEquals(5, p1.size());
 			assertEquals(5, p2.size());
@@ -60,6 +63,10 @@ public class TableTest
 		catch(DeckException e)
 		{
 			e.printStackTrace();
+		}
+		catch(TableException e1)
+		{
+			e1.printStackTrace();
 		}
 	}
 }

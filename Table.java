@@ -52,7 +52,7 @@ public class Table
 	}	
 	
 	//method that will return the ArrayList of Card objects at the parameter index of 'players'
-	ArrayList<Card> getPlayerHands(int playerIndex)
+	ArrayList<Card> getPlayerHands(int playerIndex) throws TableException
 	{
 		//ArrayList to be returned
 		ArrayList<Card> hand = null;
@@ -60,7 +60,7 @@ public class Table
 		//don't allow the setting of 'hand' with an invalid parameter index for 'numPlayers'
 		if (playerIndex < 0 || playerIndex > this.numPlayers - 1)
 		{
-			System.out.println("Invalid player index");
+			throw new TableException("Invalid player index");
 		}
 
 		//otherwise if the parameter index is valid, set 'hand' to the ArrayList at the index
@@ -70,6 +70,25 @@ public class Table
 		}
 		
 		return hand;
+	}
+	
+	//method that takes in a desired player index and prints out their hand
+	void printPlayersHand(int playerIndex) throws TableException
+	{
+		//don't allow the setting of 'hand' with an invalid parameter index for 'numPlayers'
+		if (playerIndex < 0 || playerIndex > this.numPlayers - 1)
+		{
+			throw new TableException("Invalid player index");
+		}
+
+		//otherwise if the parameter index is valid, print out the ArrayList at the index
+		else
+		{
+			for(int i = 0; i < players.get(playerIndex).size(); i++)
+			{
+				players.get(playerIndex).get(i).print();
+			}
+		}
 	}
 	
 	//method that will return the value obtained from calling the Deck class' getDeckIndex() method
